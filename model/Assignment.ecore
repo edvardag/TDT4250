@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Assignment" nsURI="platform:/plugin/tdt4250/model/Assignment.ecore"
+    nsPrefix="Assignment">
+  <eClassifiers xsi:type="ecore:EClass" name="Course">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="courseCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="credit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Length (semesters)" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredCourse" upperBound="-1"
+        eType="#//RequiredCourse" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="electiveCourse" upperBound="-1"
+        eType="#//ElectiveCourse" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Programme">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Length (semesters)" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="programmeYear" upperBound="-1"
+        eType="#//ProgrammeYear" eOpposite="#//ProgrammeYear/programme"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgrammeYear">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="programme" eType="#//Programme"
+        containment="true" eOpposite="#//Programme/programmeYear"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredCourse" eType="#//RequiredCourse"
+        eOpposite="#//RequiredCourse/requiredIn"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="electiveCourse" upperBound="-1"
+        eType="#//ElectiveCourse" eOpposite="#//ElectiveCourse/electiveIn"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequiredCourse">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredIn" eType="#//ProgrammeYear"
+        containment="true" eOpposite="#//ProgrammeYear/requiredCourse"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="course" eType="#//Course"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElectiveCourse">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="electiveIn" upperBound="-1"
+        eType="#//ProgrammeYear" containment="true" eOpposite="#//ProgrammeYear/electiveCourse"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="course" upperBound="-1"
+        eType="#//Course"/>
+  </eClassifiers>
+</ecore:EPackage>
