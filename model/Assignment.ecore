@@ -8,34 +8,52 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="credit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Length (semesters)" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredCourse" upperBound="-1"
-        eType="#//RequiredCourse" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="electiveCourse" upperBound="-1"
-        eType="#//ElectiveCourse" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Programme">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Length (semesters)" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="programmeYear" upperBound="-1"
-        eType="#//ProgrammeYear" eOpposite="#//ProgrammeYear/programme"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="programmeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//ProgrammeType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semester" upperBound="-1"
+        eType="#//semester" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specialisation" upperBound="-1"
+        eType="#//Specialisation" containment="true" eOpposite="#//Specialisation/programme"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProgrammeYear">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="programme" eType="#//Programme"
-        containment="true" eOpposite="#//Programme/programmeYear"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredCourse" eType="#//RequiredCourse"
-        eOpposite="#//RequiredCourse/requiredIn"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="electiveCourse" upperBound="-1"
-        eType="#//ElectiveCourse" eOpposite="#//ElectiveCourse/electiveIn"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RequiredCourse">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredIn" eType="#//ProgrammeYear"
-        containment="true" eOpposite="#//ProgrammeYear/requiredCourse"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="course" eType="#//Course"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ElectiveCourse">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="electiveIn" upperBound="-1"
-        eType="#//ProgrammeYear" containment="true" eOpposite="#//ProgrammeYear/electiveCourse"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="course" upperBound="-1"
+  <eClassifiers xsi:type="ecore:EClass" name="semester">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semesterType" eType="#//SemesterSeason"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
         eType="#//Course"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CourseGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="courseGroupType" eType="#//CourseGroupType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
+        eType="#//Course"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Specialisation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="programme" eType="#//Programme"
+        eOpposite="#//Programme/specialisation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semester" eType="#//semester"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courseGroups" upperBound="2"
+        eType="#//CourseGroup" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SemesterSeason">
+    <eLiterals name="Autumn"/>
+    <eLiterals name="Spring" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CourseGroupType">
+    <eLiterals name="Mandatory"/>
+    <eLiterals name="Elective" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ProgrammeType">
+    <eLiterals name="Bachelor"/>
+    <eLiterals name="Master (2y)" value="1"/>
+    <eLiterals name="Master (5y)" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="University">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="programmes" upperBound="-1"
+        eType="#//Programme" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
+        eType="#//Course" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

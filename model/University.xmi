@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Assignment:University
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Assignment="platform:/plugin/tdt4250/model/Assignment.ecore"
+    xsi:schemaLocation="platform:/plugin/tdt4250/model/Assignment.ecore Assignment.ecore">
+  <programmes
+      name="Datatechnology"
+      programmeCode="MTDT">
+    <semester
+        year="1"
+        courses="//@courses.1 //@courses.0"/>
+    <specialisation
+        semester="//@programmes.0/@semester.0"/>
+  </programmes>
+  <courses name="Introduksjon til kunstig intelegens"
+      courseCode="TDT4136"
+      credit="7.5"
+      Length (semesters)="1"
+      level="3"/>
+  <courses name="Advanced Software Design"
+      courseCode="TDT4250"
+      credit="7.5"
+      Length (semesters)="1"
+      level="4"/>
+</Assignment:University>
