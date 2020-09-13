@@ -3,7 +3,6 @@
 package TDT4250.Assignment.impl;
 
 import TDT4250.Assignment.AssignmentPackage;
-import TDT4250.Assignment.CourseGroup;
 import TDT4250.Assignment.Programme;
 import TDT4250.Assignment.Specialisation;
 import TDT4250.Assignment.semester;
@@ -20,10 +19,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,7 +33,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link TDT4250.Assignment.impl.SpecialisationImpl#getName <em>Name</em>}</li>
  *   <li>{@link TDT4250.Assignment.impl.SpecialisationImpl#getProgramme <em>Programme</em>}</li>
  *   <li>{@link TDT4250.Assignment.impl.SpecialisationImpl#getSemester <em>Semester</em>}</li>
- *   <li>{@link TDT4250.Assignment.impl.SpecialisationImpl#getCourseGroups <em>Course Groups</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,24 +59,14 @@ public class SpecialisationImpl extends MinimalEObjectImpl.Container implements 
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSemester() <em>Semester</em>}' reference.
+	 * The cached value of the '{@link #getSemester() <em>Semester</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSemester()
 	 * @generated
 	 * @ordered
 	 */
-	protected semester semester;
-
-	/**
-	 * The cached value of the '{@link #getCourseGroups() <em>Course Groups</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCourseGroups()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<CourseGroup> courseGroups;
+	protected EList<semester> semester;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -173,51 +159,11 @@ public class SpecialisationImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
-	public semester getSemester() {
-		if (semester != null && semester.eIsProxy()) {
-			InternalEObject oldSemester = (InternalEObject)semester;
-			semester = (semester)eResolveProxy(oldSemester);
-			if (semester != oldSemester) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AssignmentPackage.SPECIALISATION__SEMESTER, oldSemester, semester));
-			}
+	public EList<semester> getSemester() {
+		if (semester == null) {
+			semester = new EObjectResolvingEList<semester>(semester.class, this, AssignmentPackage.SPECIALISATION__SEMESTER);
 		}
 		return semester;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public semester basicGetSemester() {
-		return semester;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setSemester(semester newSemester) {
-		semester oldSemester = semester;
-		semester = newSemester;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AssignmentPackage.SPECIALISATION__SEMESTER, oldSemester, semester));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<CourseGroup> getCourseGroups() {
-		if (courseGroups == null) {
-			courseGroups = new EObjectContainmentEList<CourseGroup>(CourseGroup.class, this, AssignmentPackage.SPECIALISATION__COURSE_GROUPS);
-		}
-		return courseGroups;
 	}
 
 	/**
@@ -246,8 +192,6 @@ public class SpecialisationImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 			case AssignmentPackage.SPECIALISATION__PROGRAMME:
 				return basicSetProgramme(null, msgs);
-			case AssignmentPackage.SPECIALISATION__COURSE_GROUPS:
-				return ((InternalEList<?>)getCourseGroups()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -279,10 +223,7 @@ public class SpecialisationImpl extends MinimalEObjectImpl.Container implements 
 			case AssignmentPackage.SPECIALISATION__PROGRAMME:
 				return getProgramme();
 			case AssignmentPackage.SPECIALISATION__SEMESTER:
-				if (resolve) return getSemester();
-				return basicGetSemester();
-			case AssignmentPackage.SPECIALISATION__COURSE_GROUPS:
-				return getCourseGroups();
+				return getSemester();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -303,11 +244,8 @@ public class SpecialisationImpl extends MinimalEObjectImpl.Container implements 
 				setProgramme((Programme)newValue);
 				return;
 			case AssignmentPackage.SPECIALISATION__SEMESTER:
-				setSemester((semester)newValue);
-				return;
-			case AssignmentPackage.SPECIALISATION__COURSE_GROUPS:
-				getCourseGroups().clear();
-				getCourseGroups().addAll((Collection<? extends CourseGroup>)newValue);
+				getSemester().clear();
+				getSemester().addAll((Collection<? extends semester>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -328,10 +266,7 @@ public class SpecialisationImpl extends MinimalEObjectImpl.Container implements 
 				setProgramme((Programme)null);
 				return;
 			case AssignmentPackage.SPECIALISATION__SEMESTER:
-				setSemester((semester)null);
-				return;
-			case AssignmentPackage.SPECIALISATION__COURSE_GROUPS:
-				getCourseGroups().clear();
+				getSemester().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -350,9 +285,7 @@ public class SpecialisationImpl extends MinimalEObjectImpl.Container implements 
 			case AssignmentPackage.SPECIALISATION__PROGRAMME:
 				return getProgramme() != null;
 			case AssignmentPackage.SPECIALISATION__SEMESTER:
-				return semester != null;
-			case AssignmentPackage.SPECIALISATION__COURSE_GROUPS:
-				return courseGroups != null && !courseGroups.isEmpty();
+				return semester != null && !semester.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

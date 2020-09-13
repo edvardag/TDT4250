@@ -3,12 +3,18 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Assignment" nsURI="platform:/plugin/tdt4250/model/Assignment.ecore"
     nsPrefix="Assignment">
   <eClassifiers xsi:type="ecore:EClass" name="Course">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="AcceptedAmountOfCredit"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="courseCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="credit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Programme">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="TotalCreditCheck"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="programmeCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//ProgrammeType"/>
@@ -18,31 +24,24 @@
         eType="#//Specialisation" containment="true" eOpposite="#//Specialisation/programme"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="semester">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semesterType" eType="#//SemesterSeason"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Minimum30creditPerSemester AllRequiredCoursesCheck"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredCourses" upperBound="-1"
         eType="#//Course"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CourseGroup">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="courseGroupType" eType="#//CourseGroupType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="electiveCourses" upperBound="-1"
         eType="#//Course"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Specialisation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="MandatoryCoursesCheck"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="programme" eType="#//Programme"
         eOpposite="#//Programme/specialisation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="semester" eType="#//semester"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="courseGroups" upperBound="2"
-        eType="#//CourseGroup" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="SemesterSeason">
-    <eLiterals name="Autumn"/>
-    <eLiterals name="Spring" value="1"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="CourseGroupType">
-    <eLiterals name="Mandatory"/>
-    <eLiterals name="Elective" value="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semester" upperBound="-1"
+        eType="#//semester"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ProgrammeType">
     <eLiterals name="Bachelor"/>

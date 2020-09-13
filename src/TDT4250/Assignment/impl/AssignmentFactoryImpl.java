@@ -60,7 +60,6 @@ public class AssignmentFactoryImpl extends EFactoryImpl implements AssignmentFac
 			case AssignmentPackage.COURSE: return createCourse();
 			case AssignmentPackage.PROGRAMME: return createProgramme();
 			case AssignmentPackage.SEMESTER: return createsemester();
-			case AssignmentPackage.COURSE_GROUP: return createCourseGroup();
 			case AssignmentPackage.SPECIALISATION: return createSpecialisation();
 			case AssignmentPackage.UNIVERSITY: return createUniversity();
 			default:
@@ -76,10 +75,6 @@ public class AssignmentFactoryImpl extends EFactoryImpl implements AssignmentFac
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case AssignmentPackage.SEMESTER_SEASON:
-				return createSemesterSeasonFromString(eDataType, initialValue);
-			case AssignmentPackage.COURSE_GROUP_TYPE:
-				return createCourseGroupTypeFromString(eDataType, initialValue);
 			case AssignmentPackage.PROGRAMME_TYPE:
 				return createProgrammeTypeFromString(eDataType, initialValue);
 			default:
@@ -95,10 +90,6 @@ public class AssignmentFactoryImpl extends EFactoryImpl implements AssignmentFac
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case AssignmentPackage.SEMESTER_SEASON:
-				return convertSemesterSeasonToString(eDataType, instanceValue);
-			case AssignmentPackage.COURSE_GROUP_TYPE:
-				return convertCourseGroupTypeToString(eDataType, instanceValue);
 			case AssignmentPackage.PROGRAMME_TYPE:
 				return convertProgrammeTypeToString(eDataType, instanceValue);
 			default:
@@ -145,17 +136,6 @@ public class AssignmentFactoryImpl extends EFactoryImpl implements AssignmentFac
 	 * @generated
 	 */
 	@Override
-	public CourseGroup createCourseGroup() {
-		CourseGroupImpl courseGroup = new CourseGroupImpl();
-		return courseGroup;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Specialisation createSpecialisation() {
 		SpecialisationImpl specialisation = new SpecialisationImpl();
 		return specialisation;
@@ -170,46 +150,6 @@ public class AssignmentFactoryImpl extends EFactoryImpl implements AssignmentFac
 	public University createUniversity() {
 		UniversityImpl university = new UniversityImpl();
 		return university;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SemesterSeason createSemesterSeasonFromString(EDataType eDataType, String initialValue) {
-		SemesterSeason result = SemesterSeason.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertSemesterSeasonToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CourseGroupType createCourseGroupTypeFromString(EDataType eDataType, String initialValue) {
-		CourseGroupType result = CourseGroupType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertCourseGroupTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

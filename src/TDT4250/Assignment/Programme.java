@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see TDT4250.Assignment.AssignmentPackage#getProgramme()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='TotalCreditCheck'"
  * @generated
  */
 public interface Programme extends EObject {

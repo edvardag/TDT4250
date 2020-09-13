@@ -205,31 +205,31 @@ public interface AssignmentPackage extends EPackage {
 	int SEMESTER = 2;
 
 	/**
-	 * The feature id for the '<em><b>Year</b></em>' attribute.
+	 * The feature id for the '<em><b>Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER__YEAR = 0;
+	int SEMESTER__NUMBER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Semester Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Required Courses</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER__SEMESTER_TYPE = 1;
+	int SEMESTER__REQUIRED_COURSES = 1;
 
 	/**
-	 * The feature id for the '<em><b>Courses</b></em>' reference list.
+	 * The feature id for the '<em><b>Elective Courses</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER__COURSES = 2;
+	int SEMESTER__ELECTIVE_COURSES = 2;
 
 	/**
 	 * The number of structural features of the '<em>semester</em>' class.
@@ -250,52 +250,6 @@ public interface AssignmentPackage extends EPackage {
 	int SEMESTER_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link TDT4250.Assignment.impl.CourseGroupImpl <em>Course Group</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see TDT4250.Assignment.impl.CourseGroupImpl
-	 * @see TDT4250.Assignment.impl.AssignmentPackageImpl#getCourseGroup()
-	 * @generated
-	 */
-	int COURSE_GROUP = 3;
-
-	/**
-	 * The feature id for the '<em><b>Course Group Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COURSE_GROUP__COURSE_GROUP_TYPE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Courses</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COURSE_GROUP__COURSES = 1;
-
-	/**
-	 * The number of structural features of the '<em>Course Group</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COURSE_GROUP_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Course Group</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COURSE_GROUP_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link TDT4250.Assignment.impl.SpecialisationImpl <em>Specialisation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -303,7 +257,7 @@ public interface AssignmentPackage extends EPackage {
 	 * @see TDT4250.Assignment.impl.AssignmentPackageImpl#getSpecialisation()
 	 * @generated
 	 */
-	int SPECIALISATION = 4;
+	int SPECIALISATION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -324,7 +278,7 @@ public interface AssignmentPackage extends EPackage {
 	int SPECIALISATION__PROGRAMME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Semester</b></em>' reference.
+	 * The feature id for the '<em><b>Semester</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -333,22 +287,13 @@ public interface AssignmentPackage extends EPackage {
 	int SPECIALISATION__SEMESTER = 2;
 
 	/**
-	 * The feature id for the '<em><b>Course Groups</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPECIALISATION__COURSE_GROUPS = 3;
-
-	/**
 	 * The number of structural features of the '<em>Specialisation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALISATION_FEATURE_COUNT = 4;
+	int SPECIALISATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Specialisation</em>' class.
@@ -367,7 +312,7 @@ public interface AssignmentPackage extends EPackage {
 	 * @see TDT4250.Assignment.impl.AssignmentPackageImpl#getUniversity()
 	 * @generated
 	 */
-	int UNIVERSITY = 5;
+	int UNIVERSITY = 4;
 
 	/**
 	 * The feature id for the '<em><b>Programmes</b></em>' containment reference list.
@@ -406,26 +351,6 @@ public interface AssignmentPackage extends EPackage {
 	int UNIVERSITY_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link TDT4250.Assignment.SemesterSeason <em>Semester Season</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see TDT4250.Assignment.SemesterSeason
-	 * @see TDT4250.Assignment.impl.AssignmentPackageImpl#getSemesterSeason()
-	 * @generated
-	 */
-	int SEMESTER_SEASON = 6;
-
-	/**
-	 * The meta object id for the '{@link TDT4250.Assignment.CourseGroupType <em>Course Group Type</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see TDT4250.Assignment.CourseGroupType
-	 * @see TDT4250.Assignment.impl.AssignmentPackageImpl#getCourseGroupType()
-	 * @generated
-	 */
-	int COURSE_GROUP_TYPE = 7;
-
-	/**
 	 * The meta object id for the '{@link TDT4250.Assignment.ProgrammeType <em>Programme Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -433,7 +358,7 @@ public interface AssignmentPackage extends EPackage {
 	 * @see TDT4250.Assignment.impl.AssignmentPackageImpl#getProgrammeType()
 	 * @generated
 	 */
-	int PROGRAMME_TYPE = 8;
+	int PROGRAMME_TYPE = 5;
 
 
 	/**
@@ -566,69 +491,37 @@ public interface AssignmentPackage extends EPackage {
 	EClass getsemester();
 
 	/**
-	 * Returns the meta object for the attribute '{@link TDT4250.Assignment.semester#getYear <em>Year</em>}'.
+	 * Returns the meta object for the attribute '{@link TDT4250.Assignment.semester#getNumber <em>Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Year</em>'.
-	 * @see TDT4250.Assignment.semester#getYear()
+	 * @return the meta object for the attribute '<em>Number</em>'.
+	 * @see TDT4250.Assignment.semester#getNumber()
 	 * @see #getsemester()
 	 * @generated
 	 */
-	EAttribute getsemester_Year();
+	EAttribute getsemester_Number();
 
 	/**
-	 * Returns the meta object for the attribute '{@link TDT4250.Assignment.semester#getSemesterType <em>Semester Type</em>}'.
+	 * Returns the meta object for the reference list '{@link TDT4250.Assignment.semester#getRequiredCourses <em>Required Courses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Semester Type</em>'.
-	 * @see TDT4250.Assignment.semester#getSemesterType()
+	 * @return the meta object for the reference list '<em>Required Courses</em>'.
+	 * @see TDT4250.Assignment.semester#getRequiredCourses()
 	 * @see #getsemester()
 	 * @generated
 	 */
-	EAttribute getsemester_SemesterType();
+	EReference getsemester_RequiredCourses();
 
 	/**
-	 * Returns the meta object for the reference list '{@link TDT4250.Assignment.semester#getCourses <em>Courses</em>}'.
+	 * Returns the meta object for the reference list '{@link TDT4250.Assignment.semester#getElectiveCourses <em>Elective Courses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Courses</em>'.
-	 * @see TDT4250.Assignment.semester#getCourses()
+	 * @return the meta object for the reference list '<em>Elective Courses</em>'.
+	 * @see TDT4250.Assignment.semester#getElectiveCourses()
 	 * @see #getsemester()
 	 * @generated
 	 */
-	EReference getsemester_Courses();
-
-	/**
-	 * Returns the meta object for class '{@link TDT4250.Assignment.CourseGroup <em>Course Group</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Course Group</em>'.
-	 * @see TDT4250.Assignment.CourseGroup
-	 * @generated
-	 */
-	EClass getCourseGroup();
-
-	/**
-	 * Returns the meta object for the attribute '{@link TDT4250.Assignment.CourseGroup#getCourseGroupType <em>Course Group Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Course Group Type</em>'.
-	 * @see TDT4250.Assignment.CourseGroup#getCourseGroupType()
-	 * @see #getCourseGroup()
-	 * @generated
-	 */
-	EAttribute getCourseGroup_CourseGroupType();
-
-	/**
-	 * Returns the meta object for the reference list '{@link TDT4250.Assignment.CourseGroup#getCourses <em>Courses</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Courses</em>'.
-	 * @see TDT4250.Assignment.CourseGroup#getCourses()
-	 * @see #getCourseGroup()
-	 * @generated
-	 */
-	EReference getCourseGroup_Courses();
+	EReference getsemester_ElectiveCourses();
 
 	/**
 	 * Returns the meta object for class '{@link TDT4250.Assignment.Specialisation <em>Specialisation</em>}'.
@@ -663,26 +556,15 @@ public interface AssignmentPackage extends EPackage {
 	EReference getSpecialisation_Programme();
 
 	/**
-	 * Returns the meta object for the reference '{@link TDT4250.Assignment.Specialisation#getSemester <em>Semester</em>}'.
+	 * Returns the meta object for the reference list '{@link TDT4250.Assignment.Specialisation#getSemester <em>Semester</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Semester</em>'.
+	 * @return the meta object for the reference list '<em>Semester</em>'.
 	 * @see TDT4250.Assignment.Specialisation#getSemester()
 	 * @see #getSpecialisation()
 	 * @generated
 	 */
 	EReference getSpecialisation_Semester();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link TDT4250.Assignment.Specialisation#getCourseGroups <em>Course Groups</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Course Groups</em>'.
-	 * @see TDT4250.Assignment.Specialisation#getCourseGroups()
-	 * @see #getSpecialisation()
-	 * @generated
-	 */
-	EReference getSpecialisation_CourseGroups();
 
 	/**
 	 * Returns the meta object for class '{@link TDT4250.Assignment.University <em>University</em>}'.
@@ -715,26 +597,6 @@ public interface AssignmentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getUniversity_Courses();
-
-	/**
-	 * Returns the meta object for enum '{@link TDT4250.Assignment.SemesterSeason <em>Semester Season</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Semester Season</em>'.
-	 * @see TDT4250.Assignment.SemesterSeason
-	 * @generated
-	 */
-	EEnum getSemesterSeason();
-
-	/**
-	 * Returns the meta object for enum '{@link TDT4250.Assignment.CourseGroupType <em>Course Group Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Course Group Type</em>'.
-	 * @see TDT4250.Assignment.CourseGroupType
-	 * @generated
-	 */
-	EEnum getCourseGroupType();
 
 	/**
 	 * Returns the meta object for enum '{@link TDT4250.Assignment.ProgrammeType <em>Programme Type</em>}'.
@@ -872,54 +734,28 @@ public interface AssignmentPackage extends EPackage {
 		EClass SEMESTER = eINSTANCE.getsemester();
 
 		/**
-		 * The meta object literal for the '<em><b>Year</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SEMESTER__YEAR = eINSTANCE.getsemester_Year();
+		EAttribute SEMESTER__NUMBER = eINSTANCE.getsemester_Number();
 
 		/**
-		 * The meta object literal for the '<em><b>Semester Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Required Courses</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SEMESTER__SEMESTER_TYPE = eINSTANCE.getsemester_SemesterType();
+		EReference SEMESTER__REQUIRED_COURSES = eINSTANCE.getsemester_RequiredCourses();
 
 		/**
-		 * The meta object literal for the '<em><b>Courses</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Elective Courses</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SEMESTER__COURSES = eINSTANCE.getsemester_Courses();
-
-		/**
-		 * The meta object literal for the '{@link TDT4250.Assignment.impl.CourseGroupImpl <em>Course Group</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see TDT4250.Assignment.impl.CourseGroupImpl
-		 * @see TDT4250.Assignment.impl.AssignmentPackageImpl#getCourseGroup()
-		 * @generated
-		 */
-		EClass COURSE_GROUP = eINSTANCE.getCourseGroup();
-
-		/**
-		 * The meta object literal for the '<em><b>Course Group Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COURSE_GROUP__COURSE_GROUP_TYPE = eINSTANCE.getCourseGroup_CourseGroupType();
-
-		/**
-		 * The meta object literal for the '<em><b>Courses</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COURSE_GROUP__COURSES = eINSTANCE.getCourseGroup_Courses();
+		EReference SEMESTER__ELECTIVE_COURSES = eINSTANCE.getsemester_ElectiveCourses();
 
 		/**
 		 * The meta object literal for the '{@link TDT4250.Assignment.impl.SpecialisationImpl <em>Specialisation</em>}' class.
@@ -948,20 +784,12 @@ public interface AssignmentPackage extends EPackage {
 		EReference SPECIALISATION__PROGRAMME = eINSTANCE.getSpecialisation_Programme();
 
 		/**
-		 * The meta object literal for the '<em><b>Semester</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Semester</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference SPECIALISATION__SEMESTER = eINSTANCE.getSpecialisation_Semester();
-
-		/**
-		 * The meta object literal for the '<em><b>Course Groups</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SPECIALISATION__COURSE_GROUPS = eINSTANCE.getSpecialisation_CourseGroups();
 
 		/**
 		 * The meta object literal for the '{@link TDT4250.Assignment.impl.UniversityImpl <em>University</em>}' class.
@@ -988,26 +816,6 @@ public interface AssignmentPackage extends EPackage {
 		 * @generated
 		 */
 		EReference UNIVERSITY__COURSES = eINSTANCE.getUniversity_Courses();
-
-		/**
-		 * The meta object literal for the '{@link TDT4250.Assignment.SemesterSeason <em>Semester Season</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see TDT4250.Assignment.SemesterSeason
-		 * @see TDT4250.Assignment.impl.AssignmentPackageImpl#getSemesterSeason()
-		 * @generated
-		 */
-		EEnum SEMESTER_SEASON = eINSTANCE.getSemesterSeason();
-
-		/**
-		 * The meta object literal for the '{@link TDT4250.Assignment.CourseGroupType <em>Course Group Type</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see TDT4250.Assignment.CourseGroupType
-		 * @see TDT4250.Assignment.impl.AssignmentPackageImpl#getCourseGroupType()
-		 * @generated
-		 */
-		EEnum COURSE_GROUP_TYPE = eINSTANCE.getCourseGroupType();
 
 		/**
 		 * The meta object literal for the '{@link TDT4250.Assignment.ProgrammeType <em>Programme Type</em>}' enum.

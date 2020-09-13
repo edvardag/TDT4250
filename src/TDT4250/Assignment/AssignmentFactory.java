@@ -49,15 +49,6 @@ public interface AssignmentFactory extends EFactory {
 	semester createsemester();
 
 	/**
-	 * Returns a new object of class '<em>Course Group</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Course Group</em>'.
-	 * @generated
-	 */
-	CourseGroup createCourseGroup();
-
-	/**
 	 * Returns a new object of class '<em>Specialisation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

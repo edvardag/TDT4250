@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see TDT4250.Assignment.AssignmentPackage#getCourse()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AcceptedAmountOfCredit'"
  * @generated
  */
 public interface Course extends EObject {

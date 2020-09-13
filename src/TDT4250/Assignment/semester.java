@@ -15,73 +15,60 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link TDT4250.Assignment.semester#getYear <em>Year</em>}</li>
- *   <li>{@link TDT4250.Assignment.semester#getSemesterType <em>Semester Type</em>}</li>
- *   <li>{@link TDT4250.Assignment.semester#getCourses <em>Courses</em>}</li>
+ *   <li>{@link TDT4250.Assignment.semester#getNumber <em>Number</em>}</li>
+ *   <li>{@link TDT4250.Assignment.semester#getRequiredCourses <em>Required Courses</em>}</li>
+ *   <li>{@link TDT4250.Assignment.semester#getElectiveCourses <em>Elective Courses</em>}</li>
  * </ul>
  *
  * @see TDT4250.Assignment.AssignmentPackage#getsemester()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='Minimum30creditPerSemester AllRequiredCoursesCheck'"
  * @generated
  */
 public interface semester extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Year</b></em>' attribute.
+	 * Returns the value of the '<em><b>Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Year</em>' attribute.
-	 * @see #setYear(String)
-	 * @see TDT4250.Assignment.AssignmentPackage#getsemester_Year()
+	 * @return the value of the '<em>Number</em>' attribute.
+	 * @see #setNumber(int)
+	 * @see TDT4250.Assignment.AssignmentPackage#getsemester_Number()
 	 * @model
 	 * @generated
 	 */
-	String getYear();
+	int getNumber();
 
 	/**
-	 * Sets the value of the '{@link TDT4250.Assignment.semester#getYear <em>Year</em>}' attribute.
+	 * Sets the value of the '{@link TDT4250.Assignment.semester#getNumber <em>Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Year</em>' attribute.
-	 * @see #getYear()
+	 * @param value the new value of the '<em>Number</em>' attribute.
+	 * @see #getNumber()
 	 * @generated
 	 */
-	void setYear(String value);
+	void setNumber(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Semester Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link TDT4250.Assignment.SemesterSeason}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Semester Type</em>' attribute.
-	 * @see TDT4250.Assignment.SemesterSeason
-	 * @see #setSemesterType(SemesterSeason)
-	 * @see TDT4250.Assignment.AssignmentPackage#getsemester_SemesterType()
-	 * @model
-	 * @generated
-	 */
-	SemesterSeason getSemesterType();
-
-	/**
-	 * Sets the value of the '{@link TDT4250.Assignment.semester#getSemesterType <em>Semester Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Semester Type</em>' attribute.
-	 * @see TDT4250.Assignment.SemesterSeason
-	 * @see #getSemesterType()
-	 * @generated
-	 */
-	void setSemesterType(SemesterSeason value);
-
-	/**
-	 * Returns the value of the '<em><b>Courses</b></em>' reference list.
+	 * Returns the value of the '<em><b>Required Courses</b></em>' reference list.
 	 * The list contents are of type {@link TDT4250.Assignment.Course}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Courses</em>' reference list.
-	 * @see TDT4250.Assignment.AssignmentPackage#getsemester_Courses()
+	 * @return the value of the '<em>Required Courses</em>' reference list.
+	 * @see TDT4250.Assignment.AssignmentPackage#getsemester_RequiredCourses()
 	 * @model
 	 * @generated
 	 */
-	EList<Course> getCourses();
+	EList<Course> getRequiredCourses();
+
+	/**
+	 * Returns the value of the '<em><b>Elective Courses</b></em>' reference list.
+	 * The list contents are of type {@link TDT4250.Assignment.Course}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Elective Courses</em>' reference list.
+	 * @see TDT4250.Assignment.AssignmentPackage#getsemester_ElectiveCourses()
+	 * @model
+	 * @generated
+	 */
+	EList<Course> getElectiveCourses();
 
 } // semester

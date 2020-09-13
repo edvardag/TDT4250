@@ -4,7 +4,6 @@ package TDT4250.Assignment.impl;
 
 import TDT4250.Assignment.AssignmentPackage;
 import TDT4250.Assignment.Course;
-import TDT4250.Assignment.SemesterSeason;
 import TDT4250.Assignment.semester;
 
 import java.util.Collection;
@@ -28,63 +27,53 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link TDT4250.Assignment.impl.semesterImpl#getYear <em>Year</em>}</li>
- *   <li>{@link TDT4250.Assignment.impl.semesterImpl#getSemesterType <em>Semester Type</em>}</li>
- *   <li>{@link TDT4250.Assignment.impl.semesterImpl#getCourses <em>Courses</em>}</li>
+ *   <li>{@link TDT4250.Assignment.impl.semesterImpl#getNumber <em>Number</em>}</li>
+ *   <li>{@link TDT4250.Assignment.impl.semesterImpl#getRequiredCourses <em>Required Courses</em>}</li>
+ *   <li>{@link TDT4250.Assignment.impl.semesterImpl#getElectiveCourses <em>Elective Courses</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class semesterImpl extends MinimalEObjectImpl.Container implements semester {
 	/**
-	 * The default value of the '{@link #getYear() <em>Year</em>}' attribute.
+	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getYear()
+	 * @see #getNumber()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String YEAR_EDEFAULT = null;
+	protected static final int NUMBER_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getYear() <em>Year</em>}' attribute.
+	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getYear()
+	 * @see #getNumber()
 	 * @generated
 	 * @ordered
 	 */
-	protected String year = YEAR_EDEFAULT;
+	protected int number = NUMBER_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getSemesterType() <em>Semester Type</em>}' attribute.
+	 * The cached value of the '{@link #getRequiredCourses() <em>Required Courses</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSemesterType()
+	 * @see #getRequiredCourses()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final SemesterSeason SEMESTER_TYPE_EDEFAULT = SemesterSeason.AUTUMN;
+	protected EList<Course> requiredCourses;
 
 	/**
-	 * The cached value of the '{@link #getSemesterType() <em>Semester Type</em>}' attribute.
+	 * The cached value of the '{@link #getElectiveCourses() <em>Elective Courses</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSemesterType()
+	 * @see #getElectiveCourses()
 	 * @generated
 	 * @ordered
 	 */
-	protected SemesterSeason semesterType = SEMESTER_TYPE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getCourses() <em>Courses</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCourses()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Course> courses;
+	protected EList<Course> electiveCourses;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,8 +100,8 @@ public class semesterImpl extends MinimalEObjectImpl.Container implements semest
 	 * @generated
 	 */
 	@Override
-	public String getYear() {
-		return year;
+	public int getNumber() {
+		return number;
 	}
 
 	/**
@@ -121,11 +110,11 @@ public class semesterImpl extends MinimalEObjectImpl.Container implements semest
 	 * @generated
 	 */
 	@Override
-	public void setYear(String newYear) {
-		String oldYear = year;
-		year = newYear;
+	public void setNumber(int newNumber) {
+		int oldNumber = number;
+		number = newNumber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AssignmentPackage.SEMESTER__YEAR, oldYear, year));
+			eNotify(new ENotificationImpl(this, Notification.SET, AssignmentPackage.SEMESTER__NUMBER, oldNumber, number));
 	}
 
 	/**
@@ -134,34 +123,24 @@ public class semesterImpl extends MinimalEObjectImpl.Container implements semest
 	 * @generated
 	 */
 	@Override
-	public SemesterSeason getSemesterType() {
-		return semesterType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setSemesterType(SemesterSeason newSemesterType) {
-		SemesterSeason oldSemesterType = semesterType;
-		semesterType = newSemesterType == null ? SEMESTER_TYPE_EDEFAULT : newSemesterType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AssignmentPackage.SEMESTER__SEMESTER_TYPE, oldSemesterType, semesterType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Course> getCourses() {
-		if (courses == null) {
-			courses = new EObjectResolvingEList<Course>(Course.class, this, AssignmentPackage.SEMESTER__COURSES);
+	public EList<Course> getRequiredCourses() {
+		if (requiredCourses == null) {
+			requiredCourses = new EObjectResolvingEList<Course>(Course.class, this, AssignmentPackage.SEMESTER__REQUIRED_COURSES);
 		}
-		return courses;
+		return requiredCourses;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Course> getElectiveCourses() {
+		if (electiveCourses == null) {
+			electiveCourses = new EObjectResolvingEList<Course>(Course.class, this, AssignmentPackage.SEMESTER__ELECTIVE_COURSES);
+		}
+		return electiveCourses;
 	}
 
 	/**
@@ -172,12 +151,12 @@ public class semesterImpl extends MinimalEObjectImpl.Container implements semest
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AssignmentPackage.SEMESTER__YEAR:
-				return getYear();
-			case AssignmentPackage.SEMESTER__SEMESTER_TYPE:
-				return getSemesterType();
-			case AssignmentPackage.SEMESTER__COURSES:
-				return getCourses();
+			case AssignmentPackage.SEMESTER__NUMBER:
+				return getNumber();
+			case AssignmentPackage.SEMESTER__REQUIRED_COURSES:
+				return getRequiredCourses();
+			case AssignmentPackage.SEMESTER__ELECTIVE_COURSES:
+				return getElectiveCourses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -191,15 +170,16 @@ public class semesterImpl extends MinimalEObjectImpl.Container implements semest
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AssignmentPackage.SEMESTER__YEAR:
-				setYear((String)newValue);
+			case AssignmentPackage.SEMESTER__NUMBER:
+				setNumber((Integer)newValue);
 				return;
-			case AssignmentPackage.SEMESTER__SEMESTER_TYPE:
-				setSemesterType((SemesterSeason)newValue);
+			case AssignmentPackage.SEMESTER__REQUIRED_COURSES:
+				getRequiredCourses().clear();
+				getRequiredCourses().addAll((Collection<? extends Course>)newValue);
 				return;
-			case AssignmentPackage.SEMESTER__COURSES:
-				getCourses().clear();
-				getCourses().addAll((Collection<? extends Course>)newValue);
+			case AssignmentPackage.SEMESTER__ELECTIVE_COURSES:
+				getElectiveCourses().clear();
+				getElectiveCourses().addAll((Collection<? extends Course>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -213,14 +193,14 @@ public class semesterImpl extends MinimalEObjectImpl.Container implements semest
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AssignmentPackage.SEMESTER__YEAR:
-				setYear(YEAR_EDEFAULT);
+			case AssignmentPackage.SEMESTER__NUMBER:
+				setNumber(NUMBER_EDEFAULT);
 				return;
-			case AssignmentPackage.SEMESTER__SEMESTER_TYPE:
-				setSemesterType(SEMESTER_TYPE_EDEFAULT);
+			case AssignmentPackage.SEMESTER__REQUIRED_COURSES:
+				getRequiredCourses().clear();
 				return;
-			case AssignmentPackage.SEMESTER__COURSES:
-				getCourses().clear();
+			case AssignmentPackage.SEMESTER__ELECTIVE_COURSES:
+				getElectiveCourses().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -234,12 +214,12 @@ public class semesterImpl extends MinimalEObjectImpl.Container implements semest
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AssignmentPackage.SEMESTER__YEAR:
-				return YEAR_EDEFAULT == null ? year != null : !YEAR_EDEFAULT.equals(year);
-			case AssignmentPackage.SEMESTER__SEMESTER_TYPE:
-				return semesterType != SEMESTER_TYPE_EDEFAULT;
-			case AssignmentPackage.SEMESTER__COURSES:
-				return courses != null && !courses.isEmpty();
+			case AssignmentPackage.SEMESTER__NUMBER:
+				return number != NUMBER_EDEFAULT;
+			case AssignmentPackage.SEMESTER__REQUIRED_COURSES:
+				return requiredCourses != null && !requiredCourses.isEmpty();
+			case AssignmentPackage.SEMESTER__ELECTIVE_COURSES:
+				return electiveCourses != null && !electiveCourses.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -254,10 +234,8 @@ public class semesterImpl extends MinimalEObjectImpl.Container implements semest
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (year: ");
-		result.append(year);
-		result.append(", semesterType: ");
-		result.append(semesterType);
+		result.append(" (Number: ");
+		result.append(number);
 		result.append(')');
 		return result.toString();
 	}

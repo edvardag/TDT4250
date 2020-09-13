@@ -80,10 +80,6 @@ public class AssignmentAdapterFactory extends AdapterFactoryImpl {
 				return createsemesterAdapter();
 			}
 			@Override
-			public Adapter caseCourseGroup(CourseGroup object) {
-				return createCourseGroupAdapter();
-			}
-			@Override
 			public Adapter caseSpecialisation(Specialisation object) {
 				return createSpecialisationAdapter();
 			}
@@ -150,20 +146,6 @@ public class AssignmentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createsemesterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link TDT4250.Assignment.CourseGroup <em>Course Group</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see TDT4250.Assignment.CourseGroup
-	 * @generated
-	 */
-	public Adapter createCourseGroupAdapter() {
 		return null;
 	}
 

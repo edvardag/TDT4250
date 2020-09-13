@@ -18,11 +18,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link TDT4250.Assignment.Specialisation#getName <em>Name</em>}</li>
  *   <li>{@link TDT4250.Assignment.Specialisation#getProgramme <em>Programme</em>}</li>
  *   <li>{@link TDT4250.Assignment.Specialisation#getSemester <em>Semester</em>}</li>
- *   <li>{@link TDT4250.Assignment.Specialisation#getCourseGroups <em>Course Groups</em>}</li>
  * </ul>
  *
  * @see TDT4250.Assignment.AssignmentPackage#getSpecialisation()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='MandatoryCoursesCheck'"
  * @generated
  */
 public interface Specialisation extends EObject {
@@ -73,37 +72,15 @@ public interface Specialisation extends EObject {
 	void setProgramme(Programme value);
 
 	/**
-	 * Returns the value of the '<em><b>Semester</b></em>' reference.
+	 * Returns the value of the '<em><b>Semester</b></em>' reference list.
+	 * The list contents are of type {@link TDT4250.Assignment.semester}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Semester</em>' reference.
-	 * @see #setSemester(semester)
+	 * @return the value of the '<em>Semester</em>' reference list.
 	 * @see TDT4250.Assignment.AssignmentPackage#getSpecialisation_Semester()
 	 * @model
 	 * @generated
 	 */
-	semester getSemester();
-
-	/**
-	 * Sets the value of the '{@link TDT4250.Assignment.Specialisation#getSemester <em>Semester</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Semester</em>' reference.
-	 * @see #getSemester()
-	 * @generated
-	 */
-	void setSemester(semester value);
-
-	/**
-	 * Returns the value of the '<em><b>Course Groups</b></em>' containment reference list.
-	 * The list contents are of type {@link TDT4250.Assignment.CourseGroup}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Course Groups</em>' containment reference list.
-	 * @see TDT4250.Assignment.AssignmentPackage#getSpecialisation_CourseGroups()
-	 * @model containment="true" upper="2"
-	 * @generated
-	 */
-	EList<CourseGroup> getCourseGroups();
+	EList<semester> getSemester();
 
 } // Specialisation

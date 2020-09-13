@@ -4,15 +4,8 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>Assignment.ecore</foreignModel>
-  <genPackages prefix="Assignment" disposableProviderFactory="true" ecorePackage="Assignment.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Assignment.ecore#//SemesterSeason">
-      <genEnumLiterals ecoreEnumLiteral="Assignment.ecore#//SemesterSeason/Autumn"/>
-      <genEnumLiterals ecoreEnumLiteral="Assignment.ecore#//SemesterSeason/Spring"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Assignment.ecore#//CourseGroupType">
-      <genEnumLiterals ecoreEnumLiteral="Assignment.ecore#//CourseGroupType/Mandatory"/>
-      <genEnumLiterals ecoreEnumLiteral="Assignment.ecore#//CourseGroupType/Elective"/>
-    </genEnums>
+  <genPackages prefix="Assignment" basePackage="TDT4250" disposableProviderFactory="true"
+      ecorePackage="Assignment.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Assignment.ecore#//ProgrammeType">
       <genEnumLiterals ecoreEnumLiteral="Assignment.ecore#//ProgrammeType/Bachelor"/>
       <genEnumLiterals ecoreEnumLiteral="Assignment.ecore#//ProgrammeType/Master2Years"/>
@@ -32,19 +25,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assignment.ecore#//Programme/specialisation"/>
     </genClasses>
     <genClasses ecoreClass="Assignment.ecore#//semester">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assignment.ecore#//semester/year"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assignment.ecore#//semester/semesterType"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assignment.ecore#//semester/courses"/>
-    </genClasses>
-    <genClasses ecoreClass="Assignment.ecore#//CourseGroup">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assignment.ecore#//CourseGroup/courseGroupType"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assignment.ecore#//CourseGroup/courses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assignment.ecore#//semester/Number"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assignment.ecore#//semester/requiredCourses"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assignment.ecore#//semester/electiveCourses"/>
     </genClasses>
     <genClasses ecoreClass="Assignment.ecore#//Specialisation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assignment.ecore#//Specialisation/name"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Assignment.ecore#//Specialisation/programme"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assignment.ecore#//Specialisation/semester"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assignment.ecore#//Specialisation/courseGroups"/>
     </genClasses>
     <genClasses ecoreClass="Assignment.ecore#//University">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assignment.ecore#//University/programmes"/>
