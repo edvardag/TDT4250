@@ -6,7 +6,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="courseCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="credit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Length (semesters)" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Programme">
@@ -47,8 +46,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ProgrammeType">
     <eLiterals name="Bachelor"/>
-    <eLiterals name="Master (2y)" value="1"/>
-    <eLiterals name="Master (5y)" value="2"/>
+    <eLiterals name="Master2Years" value="1" literal="Master2Years"/>
+    <eLiterals name="Master5Years" value="2" literal="Master5Years"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="University">
     <eStructuralFeatures xsi:type="ecore:EReference" name="programmes" upperBound="-1"
